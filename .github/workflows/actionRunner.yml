@@ -13,5 +13,5 @@ jobs:
   start:
     runs-on : ubuntu-latest
     steps:
-    - run: echo "we are now hiting npm start"
+    - run: npm install
     - run: npm start
