@@ -1,7 +1,7 @@
 name: push-task-runner
 on:
   push:
-    branches: master
+    branches: main
 
 jobs:
   build:
