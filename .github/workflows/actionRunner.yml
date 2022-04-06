@@ -7,5 +7,5 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - run: this job is automaticaly triggered on ${{github.evwnt_name}}
-    - run: Thank you
+    - run: echo "This job is automaticaly triggered on ${{github.evwnt_name}} ""
+    - run: echo "Thank you"
