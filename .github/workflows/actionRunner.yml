@@ -10,8 +10,3 @@ jobs:
     steps:
     - run: echo "This job is automaticaly triggered on ${{github.event_name}} "
     - run: echo "Thank you"
-  start:
-    runs-on : ubuntu-latest
-    steps:
-    - run: npm install
-    - run: npm start
