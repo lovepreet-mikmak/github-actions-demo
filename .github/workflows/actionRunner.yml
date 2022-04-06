@@ -1,11 +1,12 @@
 name: push-task-runner
 on:
   push:
-    branches: main
+    branches: 
+      - main
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - run: echo "This job is automaticaly triggered on ${{github.evwnt_name}} ""
+    - run: echo "This job is automaticaly triggered on ${{github.event_name}} "
     - run: echo "Thank you"
