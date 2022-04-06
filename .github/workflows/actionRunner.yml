@@ -2,9 +2,10 @@ name: push-task-runner
 on:
   push:
     branches: master
-runs-on: ubuntu-latest
+
 jobs:
   build:
-   steps:
+    runs-on: ubuntu-latest
+    steps:
     - run: this job is automaticaly triggered on ${{github.evwnt_name}}
     - run: Thank you
