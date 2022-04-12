@@ -1,12 +1,14 @@
-name: push-task-runner
+name: app-engine-runner
+
 on:
   push:
-    branches: 
+    branches:
       - main
 
 jobs:
-  build:
+  install:
     runs-on: ubuntu-latest
     steps:
-    - run: echo "This job is automaticaly triggered on ${{github.event_name}} "
-    - run: echo "Thank you"
+      -name: npm clean install
+       run: npm ci
+      
