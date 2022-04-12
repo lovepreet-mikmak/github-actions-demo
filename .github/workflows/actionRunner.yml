@@ -9,6 +9,6 @@ jobs:
   install:
     runs-on: ubuntu-latest
     steps:
-      -name: npm clean install
+      - name: npm clean install
        run: npm ci
       
