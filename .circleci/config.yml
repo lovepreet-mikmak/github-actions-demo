@@ -24,7 +24,6 @@ jobs:
     steps:
       - run: echo "in hold"
 workflows:
-  version: 2.1
   customTrigger:
     jobs:
       - greet
