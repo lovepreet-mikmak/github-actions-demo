@@ -2,7 +2,6 @@ workflows:
   version: 2
   build-test-and-approval-deploy:
     jobs:
-      - build  # your custom job from your config, that builds your code
       - test1: # your custom job; runs test suite 1
           requires: # test1 will not run until the `build` job is completed.
             - build
