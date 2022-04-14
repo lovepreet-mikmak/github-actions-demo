@@ -20,7 +20,6 @@ workflows:
   customTrigger:
     jobs:
       - hold:
-          requires:
           type: approval
       - deploy:
           requires:
