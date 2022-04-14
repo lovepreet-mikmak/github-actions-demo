@@ -1,0 +1,11 @@
+version: 2.0
+jobs:
+  greet:
+    steps:
+      - run:
+        name: Greet person
+        command: echo "Hello welcome"
+workflows:
+  manual:
+    jobs:
+      - greet
