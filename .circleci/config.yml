@@ -7,6 +7,7 @@ workflows:
   manual:
     jobs:
       - greet:
+          type: approval
           executor:
             name: win/default # executor type
             size: "medium" # resource class, can be "medium", "large", "xlarge", "2xlarge", defaults to "medium" if not specified
@@ -14,10 +15,4 @@ workflows:
             - checkout
             - run:
                 command: echo "Hello welcome"
-      - test2: # another custom job; runs test suite 2,
-          requires: # test2 is dependent on the success of job `greet`
-            - greet
-      - hold: # <<< A job that will require manual approval in the CircleCI web application.
-          type: approval # <<< This key-value pair will set your workflow to a status of "On Hold"
-          requires: # We only run the "hold" job when test2 has succeeded
-          - test2
+      
