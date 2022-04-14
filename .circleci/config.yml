@@ -1,4 +1,4 @@
-version: 2 
+version: 2.1
 
 orbs:
   win: circleci/windows@2.2.0 # The Windows orb give you everything you need to start using the Windows executor.
@@ -24,7 +24,7 @@ jobs:
     steps:
       - run: echo "in hold"
 workflows:
-  version: 2
+  version: 2.1
   customTrigger:
     jobs:
       - greet
