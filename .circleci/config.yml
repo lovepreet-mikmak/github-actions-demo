@@ -14,21 +14,19 @@ jobs:
   hold:
     executor:
       name: win/default # executor type
-      size: "medium" # resource class, can be "medium", "large", "xlarge", "2xlarge", defaults to "medium" if not specified 
+      size: "medium" # resource class, can be "medium", "large", "xlarge", "2xlarge", defaults to "medium" if not specified  
+    type: approval
     steps:
       - run: echo "in hold"
   deploy:
+    requires:
+      - hold
     steps:
-      - run: echo "bye"
+      - run: echo "in hold"
 workflows:
   version: 2
   customTrigger:
     jobs:
       - greet
-      - hold:
-          type: approval
-          requires:
-            - greet
+      - hold
       - deploy
-          requires:
-            - hold
