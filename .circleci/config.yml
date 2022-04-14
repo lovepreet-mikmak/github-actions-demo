@@ -16,12 +16,16 @@ jobs:
       size: "medium" # resource class, can be "medium", "large", "xlarge", "2xlarge", defaults to "medium" if not specified 
     steps:
       - run: echo "in hold"
+    requires:
+      - greet
   deploy:
     executor:
       name: win/default # executor type
       size: "medium" # resource class, can be "medium", "large", "xlarge", "2xlarge", defaults to "medium" if not specified
     steps:
       - run: echo "in hold"
+    requires:
+      - hold
 workflows:
   customTrigger:
     jobs:
