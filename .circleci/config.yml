@@ -5,17 +5,16 @@ orbs:
 
 jobs:
   greet: # name of your job
+    type: approval
     executor:
       name: win/default # executor type
       size: "medium" # resource class, can be "medium", "large", "xlarge", "2xlarge", defaults to "medium" if not specified
-
     steps:
       - run: echo 'Hello, Windows'
   hold:
     executor:
       name: win/default # executor type
       size: "medium" # resource class, can be "medium", "large", "xlarge", "2xlarge", defaults to "medium" if not specified  
-    type: approval
     steps:
       - run: echo "in hold"
   deploy:
