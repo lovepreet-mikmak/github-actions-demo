@@ -20,8 +20,13 @@ jobs:
     type: approval
     steps:
       - run: echo "bye"
+  deploy:
+    requires:
+      - hold
 workflows:
   version: 2
   customTrigger:
     jobs:
       - greet
+      - hold
+      - deploy
