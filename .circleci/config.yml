@@ -20,6 +20,9 @@ jobs:
     steps:
       - run: echo "in hold"
   deploy:
+    executor:
+      name: win/default # executor type
+      size: "medium" # resource class, can be "medium", "large", "xlarge", "2xlarge", defaults to "medium" if not specified
     requires:
       - hold
     steps:
