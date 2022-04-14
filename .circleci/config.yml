@@ -23,6 +23,7 @@ jobs:
     steps:
       - run: echo "bye"
 workflows:
+  version: 2
   customTrigger:
     jobs:
       - greet
