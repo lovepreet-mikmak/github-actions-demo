@@ -4,15 +4,18 @@ orbs:
   win: circleci/windows@2.2.0 # The Windows orb give you everything you need to start using the Windows executor.
 
 workflows:
-  manual:
+  customTrigger:
     jobs:
       - greet:
           type: approval
-      - msg:
-          requires: 
-            - greet
-          steps:
-            - checkout
-            - run:
-                command: echo "Hello welcome"
+      - deploy:
+        requires:
+          - greet
+          # - msg:
+          #   requires: 
+          #     - greet
+          #   steps:
+          #     - checkout
+          #     - run:
+          #         command: echo "Hello welcome"
       
