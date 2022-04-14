@@ -8,9 +8,6 @@ workflows:
     jobs:
       - greet:
           type: approval
-      - msg:
-          requires: 
-            - greet
           steps:
             - checkout
             - run:
