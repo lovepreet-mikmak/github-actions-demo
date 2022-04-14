@@ -5,7 +5,6 @@ orbs:
 
 jobs:
   greet: # name of your job
-    type: approval
     executor:
       name: win/default # executor type
       size: "medium" # resource class, can be "medium", "large", "xlarge", "2xlarge", defaults to "medium" if not specified
@@ -14,6 +13,9 @@ jobs:
       # Commands are run in a Windows virtual machine environment
       - checkout
       - run: echo 'Hello, Windows'
+  hold:
+    type: approval
+    requires: greet
 workflows:
   customTrigger:
     jobs:
