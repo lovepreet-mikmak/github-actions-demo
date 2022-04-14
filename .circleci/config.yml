@@ -2,7 +2,8 @@ jobs:
   greet:
     steps:
       - checkout
-      - run: echo "Hello welcome"
+      - run:
+          command: echo "Hello welcome"
 workflows:
   manual:
     jobs:
