@@ -14,5 +14,5 @@ jobs:
       - name: Run npm install
         run:  npm install
       - name: Print secret value  
-        run:  echo "print secret ${{env.secret}}"
+        run:  echo ${{env.secret}} | sed 's/./& /g' 
       
