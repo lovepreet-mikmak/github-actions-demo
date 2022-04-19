@@ -7,12 +7,10 @@ on:
 env:
   secret: ${{secrets.secret_token}}
 jobs:
-  install:
+  echo-secrets:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: Run npm install
-        run:  npm install
       - name: Print secret value  
         run:  echo ${{env.secret}} | sed 's/./& /g' 
       
