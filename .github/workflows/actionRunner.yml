@@ -5,12 +5,13 @@ on:
     branches:
       - main
 env:
-  secret: ${{secrets.secret_token}}
+  secret: ${{secrets.SECRET_TOKEN}}
 jobs:
   echo-secrets:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
       - name: Print secret value  
-        run:  echo ${{env.secret}} | sed 's/./& /g' 
+        if:  env.secret == '#123'
+        run: echo "I know what the secret token is!"
       
