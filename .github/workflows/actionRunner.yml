@@ -12,6 +12,6 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Print secret value  
-        if:  env.secret == '#123'
+        if:  env.secret == '#1234'
         run: echo "I know what the secret token is!"
       
